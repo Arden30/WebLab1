@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1</title>
+    <link rel="shortcut icon" href="img/30.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Arsenev Denis, P3214</h1>
+        <h2>Variant: 2498</h2>
+    </header>
+    <div class="main-panel">
+        <div class="coordinates">
+            <img src="img/task.png" alt="Coordinate plane">
+            <h2>Coordinate plane</h2>
+        </div>
+        <div class="input">
+            <form action="php/main.php" method="GET" id="coordinates-form">
+                <div class="values">
+                    <div class="X-val">
+                        X:
+                        <label>
+                            -5
+                            <input type="radio" name="x" value="-5" required>
+                        </label>
+                        <label>
+                            -4
+                            <input type="radio" name="x" value="-4">
+                        </label>
+                        <label>
+                            -3
+                            <input type="radio" name="x" value="-3">
+                        </label>
+                        <label>
+                            -2
+                            <input type="radio" name="x" value="-2">
+                        </label>
+                        <label>
+                            -1
+                            <input type="radio" name="x" value="-5">
+                        </label>
+                        <label>
+                            0
+                            <input type="radio" name="x" value="0">
+                        </label>
+                        <label>
+                            1
+                            <input type="radio" name="x" value="1">
+                        </label>
+                        <label>
+                            2
+                            <input type="radio" name="x" value="2">
+                        </label>
+                        <label>
+                            3
+                            <input type="radio" name="x" value="3">
+                        </label>
+                    </div>
+                    <div class="Y-val">
+                        <label>
+                            Y:
+                            <input type="text" name="y" placeholder="[-3; 3]" maxlength="10" required/>
+                        </label>
+                    </div>
+                    <div class="R-val">
+                        R:
+                        <label>
+                            1
+                            <input type="radio" name="r" value="1" required>
+                        </label>
+                        <label>
+                            1.5
+                            <input type="radio" name="r" value="1.5">
+                        </label>
+                        <label>
+                            2
+                            <input type="radio" name="r" value="2">
+                        </label>
+                        <label>
+                            2.5
+                            <input type="radio" name="r" value="2.5">
+                        </label>
+                        <label>
+                            3
+                            <input type="radio" name="r" value="3">
+                        </label>
+                    </div>
+                    <button id="submit-button" type="submit">Send</button>
+                    <button id="clear-button" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="table">
+        <table id="table-header">
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Current time</th>
+                <th>Running time</th>
+                <th>Result</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<footer>
+    <h2>Web-programming. Laboratory work #1. 2023</h2>
+</footer>
+</body>
+</html>
