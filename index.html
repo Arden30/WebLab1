@@ -18,13 +18,13 @@
             <h2>Coordinate plane</h2>
         </div>
         <div class="input">
-            <form action="php/main.php" method="GET" id="coordinates-form">
+            <form action="php/script.php" method="GET" id="coordinates-form">
                 <div class="values">
                     <div class="X-val">
                         X:
                         <label>
                             -5
-                            <input type="radio" name="x" value="-5" required>
+                            <input type="radio" name="x" value="-5">
                         </label>
                         <label>
                             -4
@@ -40,11 +40,11 @@
                         </label>
                         <label>
                             -1
-                            <input type="radio" name="x" value="-5">
+                            <input type="radio" name="x" value="-1">
                         </label>
                         <label>
                             0
-                            <input type="radio" name="x" value="0">
+                            <input type="radio" name="x" value="0" checked>
                         </label>
                         <label>
                             1
@@ -62,14 +62,14 @@
                     <div class="Y-val">
                         <label>
                             Y:
-                            <input type="text" name="y" placeholder="[-3; 3]" maxlength="10" required/>
+                            <input id="y" type="text" name="y" placeholder="[-3; 3]" maxlength="10"/>
                         </label>
                     </div>
                     <div class="R-val">
                         R:
                         <label>
                             1
-                            <input type="radio" name="r" value="1" required>
+                            <input type="radio" name="r" value="1" checked>
                         </label>
                         <label>
                             1.5
@@ -89,27 +89,29 @@
                         </label>
                     </div>
                     <button id="submit-button" type="submit">Send</button>
-                    <button id="clear-button" type="reset">Reset</button>
+<!--                    <button id="reset-button" type="reset">Reset</button>-->
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="table">
+    <div class="table" id="table">
         <table id="table-header">
             <tr>
-                <th>X</th>
-                <th>Y</th>
-                <th>R</th>
-                <th>Current time</th>
-                <th>Running time</th>
-                <th>Result</th>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+                <th scope="col">R</th>
+                <th scope="col">Current time</th>
+                <th scope="col">Running time</th>
+                <th scope="col">Result</th>
             </tr>
         </table>
+        <button id="clear-button" type="reset">Clear</button>
     </div>
 </div>
-<footer>
-    <h2>Web-programming. Laboratory work #1. 2023</h2>
-</footer>
+    <footer>
+        <h2>Web-programming. Laboratory work #1. 2023</h2>
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
