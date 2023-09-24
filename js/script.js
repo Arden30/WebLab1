@@ -15,10 +15,10 @@ function checkY() {
     if (Y.value.trim() === "") {
         Y.setCustomValidity("Input number!");
         return false;
-    } else if (!isFinite(Y.value)){
+    } else if (!isFinite(Y.value.replace(",", "."))){
         Y.setCustomValidity("Wrong input (only number)!");
         return false;
-    } else if (Y.value > 3 || Y.value < -3){
+    } else if (Y.value.replace(",", ".") > 3 || Y.value.replace(",", ".") < -3){
         Y.setCustomValidity("Input number in [-3; 3]!");
         return false;
     }
@@ -27,14 +27,11 @@ function checkY() {
 }
 
 const submit = function(e) {
-    //checkY();
     if (!checkY()) return;
     e.preventDefault();
     X = (new FormData(document.getElementById("coordinates-form"))).get("x");
     R = (new FormData(document.getElementById("coordinates-form"))).get("r");
-    // console.log(X, Y, R);
-    let request = ("?x=" + X + "&y=" + Y.value + "&r=" + R);
-    //console.log(request);
+    let request = ("?x=" + X + "&y=" + Y.value.replace(",", ".") + "&r=" + R + "&timezone=" + new Date().getTimezoneOffset());
     fetch("php/script.php" + request)
         .then(response => response.text())
         .then(response => document.getElementById("table-header").innerHTML = response);

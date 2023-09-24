@@ -38,7 +38,6 @@ if(!isset($_SESSION["denis"])){
 }
 
 $start = microtime(true);
-date_default_timezone_set('Europe/Moscow');
 
 if (isset($_GET['x']) && isset($_GET['y']) && isset($_GET['r'])) {
     if (validate($_GET["x"], $_GET["y"], $_GET["r"])) {
@@ -47,7 +46,8 @@ if (isset($_GET['x']) && isset($_GET['y']) && isset($_GET['r'])) {
         $r = intval($_GET["r"]);
         $checkedHit = checkHit($x, $y ,$r);
 
-        $currentTime = date("H:i:s");
+        date_default_timezone_set('Etc/GMT' . $_GET['timezone'] / 60);
+        $currentTime = date("Y, j F, H:i:s T");
         $time = number_format(microtime(true) - $start, 10, ".", "") * 1000000;
 
         $result = array($x, $y, $r, $currentTime, $time, $checkedHit);
