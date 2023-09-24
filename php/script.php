@@ -43,7 +43,7 @@ if (isset($_GET['x']) && isset($_GET['y']) && isset($_GET['r'])) {
     if (validate($_GET["x"], $_GET["y"], $_GET["r"])) {
         $x = intval($_GET["x"]);
         $y = floatval($_GET["y"]);
-        $r = intval($_GET["r"]);
+        $r = floatval($_GET["r"]);
         $checkedHit = checkHit($x, $y ,$r);
 
         date_default_timezone_set('Etc/GMT' . $_GET['timezone'] / 60);
