@@ -8,7 +8,7 @@ function validate($x, $y, $r): bool {
         $y_num = floatval($y);
         $r_num = floatval($r);
 
-        if (!($x_num >= -5 && $x_num <= 3 && $y_num >= -3 && $y_num <= 3 && in_array($r_num, array(1, 1.5, 2, 2.5, 3)))) {
+        if (!($x_num >= -5 && $x_num <= 3 && $y_num > -3 && $y_num < 3 && in_array($r_num, array(1, 1.5, 2, 2.5, 3)))) {
             return false;
         }
     }
@@ -37,10 +37,9 @@ if(!isset($_SESSION["denis"])){
     $_SESSION["denis"] = array();
 }
 
-$start = microtime(true);
-
 if (isset($_GET['x']) && isset($_GET['y']) && isset($_GET['r'])) {
     if (validate($_GET["x"], $_GET["y"], $_GET["r"])) {
+        $start = microtime(true);
         $x = intval($_GET["x"]);
         $y = floatval($_GET["y"]);
         $r = floatval($_GET["r"]);

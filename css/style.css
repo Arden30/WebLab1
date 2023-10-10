@@ -115,9 +115,10 @@ button{
     font-size: 30px;
 }
 
-button:hover {
+.values button:hover {
     color:greenyellow;
 }
+
 
 .table {
     display: flex;
