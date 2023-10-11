@@ -41,7 +41,7 @@ if (isset($_GET['x']) && isset($_GET['y']) && isset($_GET['r'])) {
     if (validate($_GET["x"], $_GET["y"], $_GET["r"])) {
         $start = microtime(true);
         $x = intval($_GET["x"]);
-        $y = floatval($_GET["y"]);
+        $y = round(floatval($_GET["y"]), 13);
         $r = floatval($_GET["r"]);
         $checkedHit = checkHit($x, $y ,$r);
 
